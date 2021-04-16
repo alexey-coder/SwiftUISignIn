@@ -82,7 +82,7 @@ final class SignUpViewModel: ObservableObject {
     }
     
     private var dummyConfirmPasswordCheckPublisher: AnyPublisher<(password: String, isValid: Bool), Never> {
-        return confirmPasswordRequiredPublisher
+        return confirmPasswordLengthCheckPublisher
             .filter { $0.isValid }
             .map { [self] in (password: $0.password, isValid: dummyPasswordCheck(password: $0.password)) }
             .eraseToAnyPublisher()
