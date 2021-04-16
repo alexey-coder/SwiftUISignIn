@@ -23,6 +23,5 @@ struct SignInButton: View {
             }
         }
         .padding(.vertical, 10)
-//        .background(Color.gray)
     }
 }

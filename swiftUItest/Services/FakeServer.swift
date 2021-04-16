@@ -16,7 +16,7 @@ import Combine
 //username.count < 5 ? completion(false) : completion(true) }
 
 final class FakeServer {
-        
+    
     func checkAvalibilityOf(login: String) -> Future<Bool, Never> {
         return Future<Bool, Never> { promise in
             if login.count > 5 {

@@ -103,6 +103,7 @@ final class SignUpViewModel: ObservableObject {
             .filter { $0.isValid }
             .map { $0.login }
             .debounce(for: 0.5, scheduler: RunLoop.main)
+            .removeDuplicates()
             .flatMap { [server] in server.checkAvalibilityOf(login: $0) }
             .map { $0 }
             .eraseToAnyPublisher()
